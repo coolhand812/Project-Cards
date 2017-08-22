@@ -24,7 +24,9 @@ public class Cards
      */
     public void depositMoney(float money)
     {
+        if(balance > 0){
         balance=balance+money;
+        }
     }
     
     /**
