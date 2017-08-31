@@ -7,7 +7,6 @@
  */
 public class Cards
 {
-    // instance variables - replace the example below with your own
     private float balance;
 
     /**
@@ -20,35 +19,42 @@ public class Cards
     }
 
     /**
-     * this method deposits money 
+     * this method deposits money
+     * @money is the variable used to reflect the cash amount for deposit.
      */
     public void depositMoney(float money)
     {
-        if(balance > 0){
-        balance=balance+money;
+        if(balance >= 0){
+        balance = balance + money;
         }
     }
     
     /**
-     * this method withdraws money 
+     * this method withdraws from account
+     * @money represents the cash amount to be withdrawn.
      */
-    public void withdrawMoney(float money)
+    public float withdrawMoney(float money)
     {
         if(balance>=money)
         {
-            balance=balance-money;
-            System.out.println(balance);
+            if(balance>0){
+                balance=balance-money;
+                System.out.println(balance);
+            }
+            else
+            System.out.println("Your request exceeds current balance");
         }
         else
             System.out.println("Your request exceeds current balance");
+        return balance;
     }
     
     /**
-     * this method checks the current balance 
+     * this method checks the current balance
+     * @balance Is the current balance in the account.
      */
-    public float checkBalance(float balance)
+    public float checkBalance()
     {
-        System.out.println(balance);
-        return 0;
+        return balance;
     }
 }
